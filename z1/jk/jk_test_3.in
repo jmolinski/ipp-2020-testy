@@ -1,3 +1,4 @@
+# check with wildcards test
 ADD b a
 ADD a a a
 ADD a b
