@@ -1,8 +1,0 @@
-
-#Nastepna linijki bez errorow - smieszne znaczki
-ADD 7cª æþÇ
-CHECK 7cª æþÇ
-PRINT
-PRINT 7cª
-DEL 7cª æþÇ
-PRINT 7cª

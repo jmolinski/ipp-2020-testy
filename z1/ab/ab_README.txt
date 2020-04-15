@@ -1,1 +1,0 @@
-W niniejszym folderze znajduje się kilka prostych testów na działanie drzew. Były pisane z myślą o drzewach BST, więc przy niektórych implementacjach mogą nie sprawdzać wymaganych przypadków. Nie sprawdzają też prawdopodobnie wszystkich skrajnych przypadków - jeśli chcecie, abym jakieś dodał to piszcie.

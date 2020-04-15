@@ -1,83 +1,0 @@
-#tests for whitespace handling  ADD  
-		 	 	ADD		 	 	SCX#.*;_?=		 	 	
-	 	 	 ADD	 	 	 t-*r%	 	 	 
-		 		PRINT		 		
- ADD t-*r% 5&p]HL_l3 
-		ADD		SCX#.*;_?=		%Z7t07CMr		
- 	 ADD 	 t-*r% 	 2dD@p$? 	 
-	ADD	t-*r%	wL!m@n2On_4	
-	 			ADD	 			t-*r%	 			/B&8MBZ	 			
- 	 ADD 	 t-*r% 	 `Y`3 	 
-			 ADD			 t-*r%			 i>[sdekFf+			 
-   ADD   t-*r%   leZal8IW>17   
-	 PRINT	 SCX#.*;_?=	 
-		  PRINT		  SCX#.*;_?=		  
-	 		  PRINT	 		  t-*r%	 		  
- ADD t-*r% wL!m@n2On_4 Z[JBv%>e[&G 
-	 	ADD	 	t-*r%	 	leZal8IW>17	 	*);!/B\b	 	
-  	 ADD  	 t-*r%  	 i>[sdekFf+  	 (i1nYG'  	 
- ADD SCX#.*;_?= %Z7t07CMr mdcbO\g, 
-	  ADD	  t-*r%	  2dD@p$?	  %8,S>lGX.4f	  
- 	 	ADD 	 	t-*r% 	 	`Y`3 	 	&AEuh`r&5 	 	
-		  	ADD		  	t-*r%		  	leZal8IW>17		  	0!=>s>M%=		  	
-   	ADD   	t-*r%   	2dD@p$?   	`0DbqWJgP   	
-   	ADD   	t-*r%   	`Y`3   	Vk*%   	
-	 	 ADD	 	 t-*r%	 	 /B&8MBZ	 	 +Mo5Nk])	 	 
- 			  ADD 			  t-*r% 			  i>[sdekFf+ 			  ,S$6" 			  
-	 	 	 ADD	 	 	 t-*r%	 	 	 leZal8IW>17	 	 	 *Qj3\]<`	 	 	 
-  ADD  t-*r%  leZal8IW>17  iHrd?Ua1?  
- 	 	ADD 	 	t-*r% 	 	leZal8IW>17 	 	FVN? 	 	
-		   	ADD		   	t-*r%		   	`Y`3		   	<KrR/tLu@		   	
-  	 ADD  	 t-*r%  	 2dD@p$?  	 O=lQlE/63  	 
- 	  ADD 	  t-*r% 	  2dD@p$? 	  @Pa6G$_qj 	  
-	  	ADD	  	t-*r%	  	wL!m@n2On_4	  	ItTFt	  	
-	ADD	t-*r%	`Y`3	GI+C;/	
-	  ADD	  t-*r%	  leZal8IW>17	  3uOSPY	  
-	 		 ADD	 		 >:v@vA+gGhY	 		 C9=%I"Q7L	 		 (Ro0K	 		 
- 	  PRINT 	  SCX#.*;_?= 	  %Z7t07CMr 	  
- PRINT SCX#.*;_?= %Z7t07CMr 
-   PRINT   t-*r%   5&p]HL_l3   
-		 PRINT		 t-*r%		 2dD@p$?		 
- 			 	PRINT 			 	t-*r% 			 	wL!m@n2On_4 			 	
-		 PRINT		 t-*r%		 /B&8MBZ		 
-    			PRINT    			t-*r%    			`Y`3    			
-					PRINT					t-*r%					i>[sdekFf+					
-  	PRINT  	t-*r%  	leZal8IW>17  	
-  		DEL  		SCX#.*;_?=  		%Z7t07CMr  		mdcbO\g,  		mdcbO\g,  		
- 	 PRINT 	 SCX#.*;_?= 	 %Z7t07CMr 	 
- DEL SCX#.*;_?= %Z7t07CMr mdcbO\g, 
-	 	PRINT	 	SCX#.*;_?=	 	%Z7t07CMr	 	
-	 	DEL	 	SCX#.*;_?=	 	%Z7t07CMr	 	mdcbO\g,	 	
- 	PRINT 	SCX#.*;_?= 	%Z7t07CMr 	
-	 	 		 	CHECK	 	 		 	t-*r%	 	 		 	2dD@p$?	 	 		 	O=lQlE/63	 	 		 	
-    	 DEL    	 t-*r%    	 2dD@p$?    	 O=lQlE/63    	 
-		  		CHECK		  		t-*r%		  		2dD@p$?		  		O=lQlE/63		  		
-	 		PRINT	 		t-*r%	 		2dD@p$?	 		
-		CHECK		t-*r%		i>[sdekFf+		(i1nYG'		
- 		 	DEL 		 	t-*r% 		 	i>[sdekFf+ 		 	(i1nYG' 		 	
- 	  	CHECK 	  	t-*r% 	  	i>[sdekFf+ 	  	(i1nYG' 	  	
-					PRINT					t-*r%					i>[sdekFf+					
- 			 CHECK 			 t-*r% 			 leZal8IW>17 			 0!=>s>M%= 			 
-	 DEL	 t-*r%	 leZal8IW>17	 0!=>s>M%=	 
- 		CHECK 		t-*r% 		leZal8IW>17 		0!=>s>M%= 		
-			   	PRINT			   	t-*r%			   	leZal8IW>17			   	
-			CHECK			t-*r%			wL!m@n2On_4			Z[JBv%>e[&G			
-  	DEL  	t-*r%  	wL!m@n2On_4  	Z[JBv%>e[&G  	
-			  CHECK			  t-*r%			  wL!m@n2On_4			  Z[JBv%>e[&G			  
-	 		 	 	 PRINT	 		 	 	 t-*r%	 		 	 	 wL!m@n2On_4	 		 	 	 
-  				 CHECK  				 t-*r%  				 2dD@p$?  				 O=lQlE/63  				 
-    DEL    t-*r%    2dD@p$?    O=lQlE/63    
- 	 		CHECK 	 		t-*r% 	 		2dD@p$? 	 		O=lQlE/63 	 		
-			 PRINT			 t-*r%			 2dD@p$?			 
-  CHECK  t-*r%  `Y`3  
-		DEL		t-*r%		`Y`3		
-  CHECK  t-*r%  `Y`3  
- 		   PRINT 		   t-*r% 		   
- 		CHECK 		t-*r% 		leZal8IW>17 		
- 	 	   DEL 	 	   t-*r% 	 	   leZal8IW>17 	 	   
- 	 CHECK 	 t-*r% 	 leZal8IW>17 	 
-	 PRINT	 t-*r%	 
-	 	 PRINT	 	 
-		  	DEL		  	
- 	 		PRINT 	 		
-
