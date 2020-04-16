@@ -24,7 +24,8 @@ void shuffle(uint64_t *array, size_t n){
 int main() {
   gamma_t *g;
 
-  g = gamma_new(5000, 5000, -1, -1);
+  //g = gamma_new(5000, 5000, -1, -1);
+  g = gamma_new(5000, 5000, 1, 1000000);
   assert(g != NULL);
 
   srand(7331);

@@ -12,7 +12,8 @@
 int main() {
   gamma_t *g;
 
-  g = gamma_new(5010, 150010, -1, 3);
+  //g = gamma_new(5010, 150010, -1, 3);
+  g = gamma_new(5010, 50010, 500000, 3);
   assert(g != NULL);
 
   for(int i = 0; i < 1000; ++i){
@@ -68,8 +69,13 @@ int main() {
     assert(gamma_move(g, 1, 4999, 4999));
     assert(gamma_move(g, 1, 4999, 4997));
 
-    for(int i = 0; i < 150000; ++i){
-        assert(gamma_move(g, 1, 1007, 7+i));
+    /* for(int i = 0; i < 150000; ++i){ */
+    /*     assert(gamma_move(g, 1, 1007, 7+i)); */
+    /*     assert(!gamma_golden_move(g, ++it, 1008, 6)); */
+    /* } */
+
+    for(int i = 0; i < 100000; ++i){
+        assert(i < 50000 ? gamma_move(g, 1, 1007, 7+i) : gamma_golden_move(g, ++it, 1007, 50006-(i-5000)));
         assert(!gamma_golden_move(g, ++it, 1008, 6));
     }
 
