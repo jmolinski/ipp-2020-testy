@@ -75,7 +75,7 @@ int main() {
     /* } */
 
     for(int i = 0; i < 100000; ++i){
-        assert(i < 50000 ? gamma_move(g, 1, 1007, 7+i) : gamma_golden_move(g, ++it, 1007, 50006-(i-5000)));
+        assert(i < 50000 ? gamma_move(g, 1, 1007, 7+i) : gamma_golden_move(g, ++it, 1007, 50006-(i-50000)));
         assert(!gamma_golden_move(g, ++it, 1008, 6));
     }
 
