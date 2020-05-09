@@ -10,7 +10,7 @@ RUN poldek --shcmd="install perl"
 
 COPY gamma/ part2/gamma/
 COPY entrypoint.sh part2/entrypoint.sh
-COPY run_tests.sh part2/run_tests.sh
+COPY run_tests_inside_docker.sh part2/run_tests_inside_docker.sh
 COPY tests part2/tests
 
 ENTRYPOINT ["part2/entrypoint.sh"]

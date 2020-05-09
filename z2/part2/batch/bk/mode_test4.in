@@ -1,0 +1,10 @@
+# Generalnie test jest dobry, ale znaczek w 7 linijce masakruje getc
+ Á 10 20 3 4
+ì 1 2 3
+ì 2 3 3
+ã 1 3 3
+ô 1 
+ô 2 
+ÿ 1 
+ÿ 2 
+ï

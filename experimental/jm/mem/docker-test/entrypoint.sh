@@ -9,4 +9,4 @@ mkdir debug && cd debug &&cmake -D CMAKE_BUILD_TYPE=Debug .. > /dev/null && make
 
 cd /part2
 
-./run_tests.sh
+./run_tests_inside_docker.sh
