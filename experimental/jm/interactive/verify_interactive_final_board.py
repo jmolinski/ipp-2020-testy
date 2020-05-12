@@ -13,6 +13,9 @@ def verify_board(raw_result: str, expected_board: str) -> bool:
         .replace(b"\33[0m", b"")
         .replace(b"\33[?25h", b"")
         .replace(b"\33[2j", b"")
+		.replace(b"\33[K", b"") #New line
+		.replace(b"\33[7m", b"") #Reverse coloring
+		.replace(b"\33[0m", b"") #Clear coloring
         .replace(b"\33[H", b"")
         .replace(b"\33[30;47m", b"")
         .decode("ASCII")
