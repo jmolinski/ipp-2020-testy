@@ -50,10 +50,10 @@ function run_test(){
     echo "NULL po $max_allocs alokacjach"
     if [ "$valgrind_exit_code" -eq "42" ] 
     then
-        echo "ERROR blad pamieci valgrinda"
+        echo -e "\e[1;31m\tERROR blad pamieci valgrind\e[0m"
         cat valgrind_out
     else
-        echo "PAMIEC OK"
+        echo -e "\e[1;32m\tPAMIEC OK\e[0m"
     fi
 
     if [ "$should_fail" -eq "2" ] 
@@ -67,16 +67,16 @@ function run_test(){
     then
         if [ "$gamma_exit_code" -eq "0" ] 
         then
-            echo "KOD PROGRAMU OK: jest $gamma_exit_code, oczekiwany 0"
+            echo -e "\e[1;32m\tKOD PROGRAMU OK: jest $gamma_exit_code, oczekiwany 0\e[0m"
         else
-            echo "KOD GAMMA BLEDNY: jest $gamma_exit_code, oczekiwany 0"
+            echo -e "\e[1;31m\tKOD GAMMA BLEDNY: jest $gamma_exit_code, oczekiwany 0\e[0m"
         fi
     else
         if [ "$gamma_exit_code" -eq "0" ] 
         then
-            echo "KOD GAMMA BLEDNY: jest $gamma_exit_code, oczekiwany 1"
+            echo -e "\e[1;31m\tKOD GAMMA BLEDNY: jest $gamma_exit_code, oczekiwany 1\e[0m"
         else
-            echo "KOD PROGRAMU OK: jest $gamma_exit_code, oczekiwany 1"
+            echo -e "\e[1;32m\tKOD PROGRAMU OK: jest $gamma_exit_code, oczekiwany 1\e[0m"
         fi
     fi
     echo
@@ -113,11 +113,11 @@ run_test "B 2 0 2 1\nB -2 2 2 1\nB 2 2 -2 1\nB 2 2 r\nB eeeeeeeeeeeeeeeeeeeeeeee
 run_test "B 2 0 2 1\nB -2 2 2 1\nB 2 2 -2 1\nB 2 2 r\nB eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 2 2 1\nB 2 2 1\nB 2c 2 2 1\nB 1 1 2 1\np\n" 3 100000000 2
 run_test "B 2 0 2 1\nB -2 2 2 1\nB 2 2 -2 1\nB 2 2 r\nB eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee 2 2 1\nB 2 2 1\nB 2c 2 2 1\nB 1 1 2 1\np\n" 6 100000000 0
 
-run_test "I 0 2 2 1\n" 0 100000000 2
-run_test "I 0 2 2 1\n" 1 100000000 0
-run_test "I 1 1 1 1\n" 1 100000000 2
-run_test "I 1 1 1 1\n" 2 100000000 2
-run_test "I 1 1 1 1\n" 3 100000000 2
-run_test "I 1 1 1 1\n" 4 100000000 2
-run_test "I 1 1 1 1\n" 5 100000000 2
-run_test "I 1 1 1 1\n" 6 100000000 0
+run_test "I 0 2 2 1\n\04" 0 100000000 2
+run_test "I 0 2 2 1\n\04" 1 100000000 0
+run_test "I 1 1 1 1\n\04" 1 100000000 2
+run_test "I 1 1 1 1\n\04" 2 100000000 2
+run_test "I 1 1 1 1\n\04" 3 100000000 2
+run_test "I 1 1 1 1\n\04" 4 100000000 2
+run_test "I 1 1 1 1\n\04" 5 100000000 2
+run_test "I 1 1 1 1\n\04" 6 100000000 0
