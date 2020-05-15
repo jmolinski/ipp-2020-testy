@@ -4,7 +4,7 @@ import sys
 import time
 
 from dataclasses import dataclass
-from typing import Final, Iterable, List, Sequence, Tuple
+from typing import Iterable, List, Sequence, Tuple
 
 __doc__ = """
 Ten plik zawiera kompilator jezyka wysokiego poziomu
@@ -37,7 +37,7 @@ przenosny bezpieczniej jest uzywac instrukcji GOTO, w
 przeciwnym wypadku musisz uwazac zeby nie "uderzac w sciane".
 SENDCODE kod_znaku przesłany bezpośrednio na wejście programu,
 nie może to być któryś z zarezerwowanych kodów.
-Seria instrukcji SENDCODE robiąca za strzałkę nie jest zabezpieczona.
+Seria instrukcji SENDCODE robiaca za strzałkę nie jest zabezpieczona.
 
 wiersze puste i rozpoczynajace sie od # sa ignorowane
 
@@ -65,8 +65,8 @@ czy typy danych sie zgadzaja.
 Czy zmodyfikujesz interpreter/kompilator w inny sposob zalezy od ciebie,
 nie oczekuj pomocy, you're on your own.
 
-Wersja 2020.05.06.18.27
-Wersja pythona 3.8, nie gwarantuje dzialania na starszych wersjach
+Wersja 2020.05.12.14.33
+Wersja pythona 3.7, nie gwarantuje dzialania na starszych wersjach
 
 Autorzy: Jakub Moliński, Hubert Badocha
 Licencja WTFPL
@@ -118,7 +118,7 @@ class Compiler:
     areas: int
     wait_time: float
     initialized: bool = False
-    default_wait_time: Final[float] = 0.01
+    default_wait_time: float = 0.01
     debug: bool = False
 
     def __init__(self, debug: bool = False) -> None:
@@ -239,7 +239,7 @@ class Compiler:
 
     def _compile_skip_turns(self, statement: str, *args: str) -> CompiledInstruction:
         times = 1 if statement == "SKIPTURN" else int(args[0])
-        return CompiledInstruction(op=InstructionType.VERBATIM, text=b"C" * times)
+        return CompiledInstruction(op=InstructionType.VERBATIM, text=b"c" * times)
 
     def _compile_sendcode(self, code: int) -> CompiledInstruction:
         assert chr(code) not in "cCgG "
@@ -288,10 +288,11 @@ class Compiler:
         self.wait_time = self.default_wait_time
         self.initialized = False
 
+        stripped_lines = (line.strip() for line in raw_input.splitlines())
         statements = (
-            map(str.strip, stripped.split())
-            for line in raw_input.splitlines()
-            if (stripped := line.strip()) and stripped[0] != "#"
+            map(str.strip, line.split())
+            for line in stripped_lines
+            if line and line[0] != "#"
         )
 
         compiled_statements = itertools.chain.from_iterable(
@@ -336,7 +337,12 @@ def main(debug: bool, no_wait: bool, compile_only: bool) -> None:
         print(*Compiler(debug=debug).compile(raw_input), sep="\n", flush=True)
         exit(0)
 
-    Interpreter(no_wait=no_wait).run(DefaultCompiler(debug=debug).compile(raw_input))
+    try:
+        Interpreter(no_wait=no_wait).run(
+            DefaultCompiler(debug=debug).compile(raw_input)
+        )
+    except BrokenPipeError as e:
+        print(f"Broken pipe {e}", file=sys.stderr)
 
 
 if __name__ == "__main__":
@@ -344,10 +350,10 @@ if __name__ == "__main__":
         print(__doc__)
         exit(0)
 
-    no_wait = len(sys.argv) > 1 and any("nowait" in p.lower() for p in sys.argv[1:])
-    debug = len(sys.argv) > 1 and any("debug" in p.lower() for p in sys.argv[1:])
+    no_wait = len(sys.argv) > 1 and any("--nowait" in p.lower() for p in sys.argv[1:])
+    debug = len(sys.argv) > 1 and any("--debug" in p.lower() for p in sys.argv[1:])
     compile_only = len(sys.argv) > 1 and any(
-        "compile-only" in p.lower() for p in sys.argv[1:]
+        "--compile-only" in p.lower() for p in sys.argv[1:]
     )
 
     main(debug, no_wait, compile_only)
